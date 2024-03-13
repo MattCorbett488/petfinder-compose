@@ -1,0 +1,62 @@
+[versions]
+sdk-min = "24"
+sdk-target = "34"
+sdk-compile = "34"
+
+agp = "8.3.0"
+kotlin = "1.9.22"
+ktx-core = "1.12.0"
+junit = "4.13.2"
+junit-android = "1.1.5"
+espresso-core = "3.5.1"
+lifecycle-ktx = "2.7.0"
+activity-compose = "1.8.2"
+
+compose-bom = "2024.02.02"
+compose-compiler = "1.5.10"
+
+ktor = "2.3.9"
+kotlinx-serialization = "1.6.3"
+
+test-orchestrator = "1.4.2"
+test-runner = "1.5.2"
+
+[libraries]
+core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "ktx-core" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+junit-android = { group = "androidx.test.ext", name = "junit", version.ref = "junit-android" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle-ktx" }
+activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
+
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+compose-ui = { group = "androidx.compose.ui", name = "ui" }
+compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+compose-ui-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+compose-window-size = { group = "androidx.compose.material3", name = "material3-window-size-class" }
+compose-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycle-ktx" }
+
+test-orchestrator = { group = "androidx.test", name = "orchestrator", version.ref = "test-orchestrator" }
+test-runner = { group = "androidx.test", name = "runner", version.ref = "test-runner" }
+
+ktor-client = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
+ktor-okhttp-engine = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktor" }
+
+kotlinx-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+
+[bundles]
+compose = ["compose-ui", "compose-ui-graphics", "compose-material3", "activity-compose", "compose-window-size", "compose-ui-preview", "compose-viewmodel"]
+core = ["core-ktx", "lifecycle-runtime-ktx"]
+api = ["ktor-client", "ktor-okhttp-engine", "kotlinx-serialization"]
+
+android-test = ["espresso-core", "junit", "junit-android", "compose-ui-test-junit4", "test-runner"]
+debug = ["compose-ui-test-manifest", "compose-ui-tooling"]
