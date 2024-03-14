@@ -21,6 +21,9 @@ kotlinx-serialization = "1.6.3"
 test-orchestrator = "1.4.2"
 test-runner = "1.5.2"
 
+google-services = "4.4.1"
+firebase-bom = "32.7.4"
+
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "ktx-core" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -43,8 +46,16 @@ compose-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-
 test-orchestrator = { group = "androidx.test", name = "orchestrator", version.ref = "test-orchestrator" }
 test-runner = { group = "androidx.test", name = "runner", version.ref = "test-runner" }
 
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase-bom" }
+firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
+firebase-config = { group = "com.google.firebase", name = "firebase-config" }
+
 ktor-client = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
 ktor-okhttp-engine = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktor" }
+ktor-contentNegotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-serialization = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
+ktor-auth = { group = "io.ktor", name = "ktor-client-auth", version.ref = "ktor" }
+ktor-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "ktor" }
 
 kotlinx-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
 
@@ -52,11 +63,13 @@ kotlinx-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-seria
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+google-services = { id = "com.google.gms.google-services", version.ref = "google-services" }
 
 [bundles]
 compose = ["compose-ui", "compose-ui-graphics", "compose-material3", "activity-compose", "compose-window-size", "compose-ui-preview", "compose-viewmodel"]
 core = ["core-ktx", "lifecycle-runtime-ktx"]
-api = ["ktor-client", "ktor-okhttp-engine", "kotlinx-serialization"]
+api = ["ktor-client", "ktor-okhttp-engine", "kotlinx-serialization", "ktor-contentNegotiation", "ktor-serialization", "ktor-auth", "ktor-logging"]
 
 android-test = ["espresso-core", "junit", "junit-android", "compose-ui-test-junit4", "test-runner"]
 debug = ["compose-ui-test-manifest", "compose-ui-tooling"]

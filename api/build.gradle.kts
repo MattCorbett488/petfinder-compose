@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlinx.serialization)
 }
 
 val javaVersion = JavaVersion.VERSION_17
@@ -38,6 +39,8 @@ dependencies {
 
     implementation(libs.core.ktx)
     testImplementation(libs.junit)
-    androidTestImplementation(libs.junit.android)
-    androidTestImplementation(libs.espresso.core)
+
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.config)
 }

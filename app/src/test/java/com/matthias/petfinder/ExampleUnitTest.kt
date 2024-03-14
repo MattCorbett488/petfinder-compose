@@ -1,4 +1,4 @@
-package com.matthias.petfindercompose
+package com.matthias.petfinder
 
 import org.junit.Test
 

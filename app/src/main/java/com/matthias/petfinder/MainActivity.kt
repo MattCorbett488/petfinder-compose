@@ -1,4 +1,4 @@
-package com.matthias.petfindercompose
+package com.matthias.petfinder
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,11 +10,18 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.matthias.petfindercompose.ui.theme.PetfinderComposeTheme
+import androidx.lifecycle.lifecycleScope
+import com.matthias.petfinder.api.PetFinderClient
+import com.matthias.petfinder.ui.theme.PetfinderComposeTheme
+import kotlinx.coroutines.runBlocking
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        runBlocking {
+            PetFinderClient.INSTANCE.initialize()
+            PetFinderClient.INSTANCE.animals()
+        }
         setContent {
             PetfinderComposeTheme {
                 // A surface container using the 'background' color from the theme

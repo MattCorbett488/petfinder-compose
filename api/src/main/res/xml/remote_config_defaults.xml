@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defaults>
+  <entry>
+    <key>client_id</key>
+    <value> </value>
+  </entry>
+  <entry>
+    <key>client_secret</key>
+    <value> </value>
+  </entry>
+</defaults>
