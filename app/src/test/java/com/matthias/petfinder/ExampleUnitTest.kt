@@ -1,4 +1,4 @@
-package com.matthias.petfinder.api
+package com.matthias.petfinder
 
 import org.junit.Test
 

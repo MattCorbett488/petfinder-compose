@@ -21,5 +21,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Petfinder Compose"
+rootProject.name = "Petfinder"
 include(":app", ":api")

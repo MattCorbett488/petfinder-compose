@@ -5,17 +5,18 @@ import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.google.services)
 }
 
 val jvmTarget = JavaVersion.VERSION_17
 val properties by lazy { gradleLocalProperties(rootDir, providers) }
 
 android {
-    namespace = "com.matthias.petfindercompose"
+    namespace = "com.matthias.petfinder"
     compileSdk = libs.versions.sdk.compile.get().toInt()
 
     defaultConfig {
-        applicationId = "com.matthias.petfindercompose"
+        applicationId = "com.matthias.petfinder"
         minSdk = libs.versions.sdk.min.get().toInt()
         targetSdk = libs.versions.sdk.target.get().toInt()
         versionCode = 1
@@ -90,6 +91,7 @@ dependencies {
         implementation(it)
         androidTestImplementation(it)
     }
+    implementation(project(":api"))
 
     implementation(libs.bundles.compose)
     implementation(libs.bundles.core)
