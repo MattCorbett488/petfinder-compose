@@ -1,6 +1,5 @@
-package com.matthias.petfinder.api
+package com.matthias.petfindercompose
 
-import kotlinx.coroutines.runBlocking
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -13,9 +12,6 @@ import org.junit.Assert.*
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
-        runBlocking {
-            PetFinderClient().fetchToken()
-            Unit
-        }
+        assertEquals(4, 2 + 2)
     }
 }

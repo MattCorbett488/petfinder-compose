@@ -92,6 +92,7 @@ dependencies {
         androidTestImplementation(it)
     }
     implementation(project(":api"))
+
     implementation(libs.bundles.compose)
     implementation(libs.bundles.core)
 

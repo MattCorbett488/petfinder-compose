@@ -43,4 +43,7 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
     implementation(libs.firebase.config)
+
+    androidTestImplementation(libs.junit.android)
+    androidTestImplementation(libs.espresso.core)
 }
